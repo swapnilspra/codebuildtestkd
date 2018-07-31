@@ -1,6 +1,10 @@
-build:
+version: 0.2
+Phases:
+    build:
         commands:
             - echo "S3 Upload Beginning"
             - aws s3 sync ./ s3://pocbuckettest/ --region us-east-1 --delete --acl public-read
             - echo "S3 Upload Complete"
 
+
+			
