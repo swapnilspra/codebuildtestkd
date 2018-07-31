@@ -5,11 +5,12 @@ phases:
     build:
         commands:
             - echo "S3 Upload Beginning"
+            - aws s3 ls s3://testpocbucket/
             - aws s3 sync / s3://testpocbucket/ --region us-east-1 --delete --acl public-read
-			- aws s3 ls s3://testpocbucket
             - echo "S3 Upload Complete"
 
     post_build:
         commands:
             - echo "Build complete"
+			
            
